@@ -3,7 +3,9 @@ Music providers are also incentivized to recommend songs that their users like i
 
 # In this project I have done: #
 
-** Dealt with spotify dataset which contains (Session data -Track features)
+## Dataset ##
+
+*  Dealt with spotify dataset which contains (Session data -Track features)
 Check the dataset paper through this link: https://arxiv.org/pdf/1901.09851.pdf 
 
 
