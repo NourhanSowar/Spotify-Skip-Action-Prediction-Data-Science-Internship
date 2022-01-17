@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Spotify Skip Action Prediction API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1 style="text-align:center">Spotify Music Skips Action Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    
+    <!-- make the user select session_position and session_length (1:20) -->
+		<label for="session_position" >Music position in a Session:</label>
+    	<input list="session_position_list" name="session_position" placeholder="Select" required="required">
+        <datalist id="session_position_list">
+            <option value="1"><option value="2"><option value="3"><option value="4"><option value="5">
+            <option value="6"><option value="7"><option value="8"><option value="9"><option value="10">
+            <option value="11"><option value="12"><option value="13"><option value="14"><option value="15">
+            <option value="16"><option value="17"><option value="18"><option value="19"><option value="20">
+        </datalist><h8></h8>
+    	
+		<label for="session_length" >Session Length:</label>
+    	<input list="session_length_list" name="session_length" placeholder="Select" required="required">
+        <datalist id="session_length_list">
+            <option value="1"><option value="2"><option value="3"><option value="4"><option value="5">
+            <option value="6"><option value="7"><option value="8"><option value="9"><option value="10">
+            <option value="11"><option value="12"><option value="13"><option value="14"><option value="15">
+            <option value="16"><option value="17"><option value="18"><option value="19"><option value="20">
+        </datalist><h8><br><br>
+		
+		<label for="track_id" >Track ID:</label>
+    	<input list="track_id_list" name="track_id" placeholder="Select" required="required">
+        <datalist id="track_id_list">
+            <option value="t_a540e552-16d4-42f8-a185-232bd650ea7d"><option value="t_fcb90952-0c6d-4644-86ac-951f6ec4b3ff"><option value="t_30a43c06-41f9-4c84-9dfe-a4a7d254c873"><option value="t_b4abeed3-a7f5-485f-998d-0c24053bbc37"><option value="t_61b6b4be-fe16-48df-b7f6-f94ad79779d5">
+            <option value="t_b5f159ad-3e68-463c-8063-7c6142685266"><option value="t_949bceb4-9f66-47a4-ac9c-65f4cc0b082b"><option value="t_ec6275bf-02f9-4cab-b111-a5578965a83d"><option value="t_ed30b52c-6fd0-49d4-9288-7d6e77f50377"><option value="t_4c4ff766-12d5-4fa4-a93f-b1d901ea2d67">
+        </datalist><h8>
+    <!-- make the user select yes or no context_switch -->
+		<label for="context_switch" >Context Switch:</label>
+    	<input list="context_switch_list" name="context_switch" placeholder="Select" required="required">
+        <datalist id="context_switch_list">
+            <option value="Yes"> <option value="No">
+        </datalist><br><br>
+ 
+ 		<label for="no_pause_before_play" >No Pause Before Play:</label>
+    	<input list="no_pause_before_play_list" name="no_pause_before_play" placeholder="Select" required="required">
+        <datalist id="no_pause_before_play_list">
+            <option value="Yes"> <option value="No">
+        </datalist><h8>
+ 		<label for="hist_user_behavior_n_seekfwd" >Seek Forward:</label>
+    	<input name="hist_user_behavior_n_seekfwd" placeholder="0-100" type='number' max='100' min='0' required="required">
+        <br><br>
+        
+ 		<label for="hist_user_behavior_n_seekback" >Seek Backward:</label>
+    	<input name="hist_user_behavior_n_seekback" placeholder="0-100" type='number' max='100' min='0' required="required">
+        <h8>
+ 		<label for="hist_user_behavior_is_shuffle" >Shuffle:</label>
+    	<input list="hist_user_behavior_is_shuffle_list" name="hist_user_behavior_is_shuffle" placeholder="Select" required="required">
+        <datalist id="hist_user_behavior_is_shuffle_list">
+            <option value="Yes"> <option value="No">
+        </datalist><br><br>
+
+ 		<label for="hour_of_day" >Hour of Day:</label>
+    	<input name="hour_of_day" placeholder="0-23" type='number' max='23' min='0' required="required">
+        <h8>
+        <label for="date">Date:</label>
+        <input type="date" name="date" required="required"><br><br>
+        
+		<label for="premium" >Premium:</label>
+    	<input list="premium_list" name="premium" placeholder="Select" required="required">
+        <datalist id="premium_list">
+            <option value="Yes"><option value="No">
+        </datalist><br><br>
+        
+		<label for="context_type" >Context Type:</label>
+    	<input list="context_type_list" name="context_type" placeholder="Select" required="required">
+        <datalist id="context_type_list">
+            <option value="editorial_playlist"><option value="user_collection"><option value="radio">
+            <option value="personalized_playlist"><option value="catalog"><option value="charts">
+        </datalist><br><br>
+  
+		<label for="hist_user_behavior_reason_start" >Start Reason:</label>
+    	<input list="hist_user_behavior_reason_start_list" name="hist_user_behavior_reason_start" placeholder="Select" required="required">
+        <datalist id="hist_user_behavior_reason_start_list">
+            <option value="trackdone"><option value="fwdbtn"><option value="backbtn"><option value="remote"><option value="trackerror">
+            <option value="clickrow"><option value="appload"><option value="playbtn"><option value="endplay">
+        </datalist><h8><br><br>
+        
+		<label for="hist_user_behavior_reason_end" >End Reason:</label>
+    	<input list="hist_user_behavior_reason_end_list" name="hist_user_behavior_reason_end" placeholder="Select" required="required">
+        <datalist id="hist_user_behavior_reason_end_list">
+            <option value="trackdone"><option value="fwdbtn"><option value="backbtn"><option value="endplay"><option value="logout">
+            <option value="remote"><option value="clickrow">
+        </datalist>
+  
+  <br><br><br>
+        <button type="submit" style="margin-left: 40%; width: 300px;" class="btn btn-primary btn-block btn-large">Click here to Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
