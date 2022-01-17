@@ -11,7 +11,7 @@ Music providers are also incentivized to recommend songs that their users like i
    
 ## 2- Track Features & Session Data ##
 
-*In this, I have impleneted on dataset : 
+In this, I have impleneted on dataset : 
 *   1- Preprocessing on Data.
 *   2- Data Wrngling (Handling Missing Data, Handling Categorical Data)
 *   3- Feature Engineering
@@ -20,14 +20,21 @@ Music providers are also incentivized to recommend songs that their users like i
 
 ## 3- Machine Learning Models ##
 
-  *In this, I have Impleented some ML models:
-  *  1- 
+  In this, I have Implemented some ML models to predict skip Action and check f1_score by choose skipped Column as target value:
+  
+  *  1- RandomForestClassifier
+  *  2- XGBClassifier
+  *  3- DecisionTreeClassifier
+ 
+ And chosen DecisionTreeClassifier as its high accuracy.
+ 
+ 
+## 4- Machine Learning Deployment ##
+
+In this, Using Falsk to create web application to predict the output of the model
+
+**Let's check Web App Link : 
+http://ae49-34-125-221-85.ngrok.io **
 
 
-
-
-
-
-Web App Link : 
-http://ae49-34-125-221-85.ngrok.io
 
