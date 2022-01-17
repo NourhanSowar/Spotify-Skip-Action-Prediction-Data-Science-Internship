@@ -6,11 +6,12 @@ Music providers are also incentivized to recommend songs that their users like i
 ## 1- Dataset ##
 
 *  Chose public spotify dataset which contains (Session data -Track features)
+   
    **Check the dataset paper through this link: https://arxiv.org/pdf/1901.09851.pdf**
    
 ## 2- Track Features & Session Data ##
 
-* In this, I have impleneted on dataset : 
+*In this, I have impleneted on dataset : 
 *   1- Preprocessing on Data.
 *   2- Data Wrngling (Handling Missing Data, Handling Categorical Data)
 *   3- Feature Engineering
@@ -19,7 +20,7 @@ Music providers are also incentivized to recommend songs that their users like i
 
 ## 3- Machine Learning Models ##
 
-  * In this, I have Impleented some ML models:
+  *In this, I have Impleented some ML models:
   *  1- 
 
 
