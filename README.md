@@ -33,8 +33,8 @@ In this, I have impleneted on dataset :
 
 In this, Using Falsk to create web application to predict the output of the model
 
-**Let's check Web App Link : 
-http://ae49-34-125-221-85.ngrok.io **
+**Let's check Web App Link :** 
+**http://ae49-34-125-221-85.ngrok.io **
 
 
 
