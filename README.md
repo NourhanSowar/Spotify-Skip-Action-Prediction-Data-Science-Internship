@@ -37,4 +37,9 @@ In this, Using Falsk to create web application to predict the output of the mode
 **http://ae49-34-125-221-85.ngrok.io**
 
 
-
+## Used Technolgies ##
+* Python3
+* Numpy, Pandas for Data Mining
+* Seaborn, Matlplotlib for Visualization
+* Sklearn for ML Models
+* HTML and Flask for Web Application
